@@ -10,15 +10,13 @@ const pool = require('./database');
 
 const app = express();
 
-app.use('/api/products', productsRouter);
-app.use('/api/users', userRoutes);
-app.use('/api/cart', cartRoutes);
-
 // Middleware
 app.use(express.json());
 app.use(cors());
 
-
+app.use('/api/products', productsRouter);
+app.use('/api/users', userRoutes);
+app.use('/api/cart', cartRoutes);
 
 // Routes
 app.get('/', (req, res) => {
